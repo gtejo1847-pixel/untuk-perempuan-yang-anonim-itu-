@@ -1,4 +1,4 @@
-# untuk perempuan yang anonim itu
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -35,6 +35,7 @@ p {
   font-size: 18px;
   line-height: 1.6;
   color: #333;
+  white-space: pre-line;
 }
 
 /* Petunjuk musik */
@@ -42,6 +43,7 @@ p {
   margin-top: 15px;
   font-size: 14px;
   color: #999;
+  cursor: pointer;
   animation: pulse 1.5s infinite;
 }
 
@@ -72,12 +74,16 @@ p {
   }
 }
 </style>
+.poem {
+  text-align: left;
+  white-space: pre-line;
+}
 </head>
 
 <body>
 
 <div class="card">
-  <h1>Untukmu </h1>
+  <h1>Untukmu</h1>
   <p>
 Aku sudah sampai di titik
 tidak berharap apa-apa dari siapa pun.
@@ -99,26 +105,32 @@ ajari aku pelan-pelan
 bahwa percaya tidak selalu berakhir
 dengan kehilangan.
   </p>
-  <div id="hint">Tap disini untuk memunculkan sesuatu</div>
+
+  <div id="hint">Tap di sini untuk memunculkan sesuatu </div>
   <p>— Djati</p>
 </div>
 
 <audio id="music" loop>
-  <source src="musik.mp3" type="mpeg">
+  <source src="musik.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 const music = document.getElementById("music");
+const hint = document.getElementById("hint");
 let started = false;
 
-document.body.addEventListener("click", () => {
+hint.addEventListener("click", async () => {
   if (!started) {
-    music.play();
-    started = true;
-    document.getElementById("hint").style.display = "none";
-    startHearts();
+    try {
+      await music.play();
+      started = true;
+      hint.style.display = "none";
+      startHearts();
+    } catch (e) {
+      alert("Tap sekali lagi ya 🎵");
+    }
   }
-}, { once: true });
+});
 
 function startHearts() {
   setInterval(() => {
