@@ -104,7 +104,7 @@ dengan kehilangan.
 </div>
 
 <audio id="music" loop>
-  <source src="musik.mp3" type="audio/mpeg">
+  <source src="musik.mp3" type="mpeg">
 </audio>
 
 <script>
