@@ -1,5 +1,4 @@
 # untuk perempuan yang anonim itu
-# untuk perempuan yang anonim itu
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -98,7 +97,7 @@ mungkin aku akan berani lagi,
 bukan untuk jatuh,
 tapi untuk percaya.
   </p>
-  <div id="hint">Tap di mana saja untuk memulai musik 🎵</div>
+  <div id="hint">Tap disini untuk memunculkan sesuatu</div>
   <p>— Djati</p>
 </div>
 
